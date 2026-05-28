@@ -38,8 +38,9 @@ export default function Navbar() {
           <Link href="/">Home</Link>
           <Link href="/stories">Stories</Link>
           <Link href="/printables">Printables</Link>
-          <Link href="/parenting">Parenting</Link>
-          <Link href="/healthy-food">Healthy Food</Link>
+          {/*<Link href="/parenting">Parenting</Link>
+          <Link href="/healthy-food">Healthy Food</Link>*/}
+          <Link href="/about">About</Link>
         </nav>
 
         {/* Mobile Hamburger */}
