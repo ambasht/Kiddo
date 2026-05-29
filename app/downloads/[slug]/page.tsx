@@ -51,27 +51,43 @@ export default function DownloadPage({
 
 
   const handleSubmit = async (
-    e: React.FormEvent<HTMLFormElement>
-  ) => {
-    e.preventDefault();
+  e: React.FormEvent<HTMLFormElement>
+) => {
 
-    if (!email) return;
+  e.preventDefault();
 
-    try {
-      setLoading(true);
+  setLoading(true);
 
-      await new Promise((resolve) =>
-        setTimeout(resolve, 1500)
-      );
+  try {
 
-      setSuccess(true);
-    } catch (error) {
-      console.error(error);
-    } finally {
-      setLoading(false);
-    }
-  };
+    await fetch(
+      "/api/send-printable",
+      {
+        method: "POST",
 
+        headers: {
+          "Content-Type":
+            "application/json",
+        },
+
+        body: JSON.stringify({
+          email,
+          printable,
+        }),
+      }
+    );
+   
+    setSuccess(true);
+
+  } catch (error) {
+
+    console.error(error);
+
+  } finally {
+
+    setLoading(false);
+  }
+};
   return (
     <div className="min-h-screen bg-[#fffaf7] overflow-hidden">
 
