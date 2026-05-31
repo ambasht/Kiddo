@@ -26,7 +26,7 @@ export async function POST(req: Request) {
         }),
       }
     );
-
+/*
     await resend.emails.send({
       from: "onboarding@resend.dev",
 
@@ -43,7 +43,7 @@ export async function POST(req: Request) {
         </a>
       `,
     });
-
+  */
     return Response.json({
       success: true,
     });

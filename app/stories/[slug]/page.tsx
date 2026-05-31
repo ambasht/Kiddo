@@ -89,7 +89,7 @@ export default async function StoryDetailPage({
                 {story.desc}
               </p>
 
-              <div className="mt-10">
+              <div className="hidden mt-10">
                 <Button>
                   Start Reading ✨
                 </Button>
@@ -113,7 +113,7 @@ export default async function StoryDetailPage({
       </section>
 
       {/* Audio Section */}
-      <section className="py-10">
+      <section className="hidden py-10">
         <Container>
           <div className="bg-white rounded-[32px] shadow-lg border border-orange-100 p-6 md:p-8 flex flex-col md:flex-row items-center gap-6">
 

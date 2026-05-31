@@ -3,7 +3,7 @@ import Link from "next/link";
 export default function Footer() {
   return (
     <footer className="bg-slate-900 text-white px-5 py-16">
-      <div className="max-w-7xl mx-auto grid md:grid-cols-3 gap-12">
+      <div className="max-w-7xl mx-auto grid md:grid-cols-4 gap-12">
         
         {/* Brand */}
         <div>
@@ -24,6 +24,37 @@ export default function Footer() {
           <Link href="/parenting">Parenting</Link>
           <Link href="/healthy-food">Healthy Food</Link>
         </div>
+        {/*Company*/}
+        <div>
+          <h3 className="font-bold mb-4">Company</h3>
+         <ul className="space-y-2">
+           <li><Link href="/about">About</Link></li>
+           <li><Link href="/contact">Contact</Link></li>
+           <li><Link href="/faq">FAQ</Link></li>
+         </ul>
+        </div>
+
+        {/*Legal*/}
+        <div>
+           <h3 className="font-bold mb-4">Legal</h3>
+           <ul className="space-y-2">
+             <li>
+               <Link href="/privacy-policy">
+                 Privacy Policy
+               </Link>
+             </li>
+             <li>
+               <Link href="/terms-and-conditions">
+                 Terms & Conditions
+               </Link>
+             </li>
+             <li>
+               <Link href="/disclaimer">
+                 Disclaimer
+               </Link>
+             </li>
+           </ul>
+         </div>
 
         {/* Social */}
         <div>

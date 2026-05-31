@@ -1,4 +1,5 @@
 import Newsletter from "@/components/sections/Newsletter";
+import Link from "next/link";
 export default function KiddoHomepage() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-yellow-50 via-white to-sky-50 text-slate-800 overflow-hidden">
@@ -26,15 +27,18 @@ export default function KiddoHomepage() {
             </p>
 
             <div className="flex flex-wrap gap-4 mt-10">
+              <Link href="/stories">
               <button className="bg-gradient-to-r from-orange-400 to-pink-400 hover:scale-105 transition-all duration-300 text-white px-8 py-4 rounded-2xl font-semibold shadow-xl">
                 Start Exploring
               </button>
-
+              </Link>
+              <Link href="/about">
               <button className="bg-white hover:bg-slate-50 border border-slate-200 px-8 py-4 rounded-2xl font-semibold shadow-md transition-all duration-300">
                 Learn More
               </button>
+              </Link>
             </div>
-
+            {/*
             <div className="flex gap-8 mt-14">
               <div>
                 <h3 className="text-3xl font-bold text-orange-500">10K+</h3>
@@ -50,7 +54,7 @@ export default function KiddoHomepage() {
                 <h3 className="text-3xl font-bold text-yellow-500">24/7</h3>
                 <p className="text-slate-500 text-sm">Support & Safety</p>
               </div>
-            </div>
+            </div>*/}
           </div>
 
           {/* IMAGE PLACEHOLDER: HERO IMAGE */}
@@ -148,7 +152,7 @@ export default function KiddoHomepage() {
         </div>
       </section>
 
-      {/* Testimonials */}
+      {/* Testimonials 
       <section className="py-24 px-6">
         <div className="max-w-7xl mx-auto text-center">
           <p className="text-orange-500 font-semibold uppercase tracking-wider">What Parents Say</p>
@@ -186,7 +190,7 @@ export default function KiddoHomepage() {
           </div>
         </div>
       </section>
-
+      */}
       {/* CTA */}
       <Newsletter/>
 

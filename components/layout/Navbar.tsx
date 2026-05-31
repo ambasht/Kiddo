@@ -24,17 +24,18 @@ export default function Navbar() {
             </p>
           </div>
         </div>
-        {menuOpen && (
+       {/* {menuOpen && (
           <div className="md:hidden px-5 pb-5 flex flex-col gap-4 font-medium text-slate-700">
             <Link href="/">Home</Link>
             <Link href="/stories">Stories</Link>
             <Link href="/printables">Printables</Link>
-            <Link href="/parenting">Parenting</Link>
+            {/*<Link href="/parenting">Parenting</Link>
             <Link href="/healthy-food">Healthy Food</Link>
+            <Link href="/about">About</Link>
           </div>
-        )}
+        )}*/}
         {/* Desktop Nav */}
-        <nav className="hidden md:flex items-center gap-8 font-medium text-sm">
+        <nav className="hidden md:flex items-center gap-20 font-medium text-sm">
           <Link href="/">Home</Link>
           <Link href="/stories">Stories</Link>
           <Link href="/printables">Printables</Link>
@@ -52,8 +53,74 @@ export default function Navbar() {
            <span className="w-6 h-0.5 bg-slate-700 rounded-full"></span>
            <span className="w-6 h-0.5 bg-slate-700 rounded-full"></span>
          </button>
+       
       </div>
     </header>
+    {menuOpen && (
+  <div className="md:hidden fixed inset-0 z-[9999] bg-gradient-to-b from-orange-50 via-white to-pink-50">
+
+    {/* Header */}
+    <div className="flex items-center justify-between px-5 py-4 border-b border-orange-100">
+
+      <div className="flex items-center gap-3">
+        <div className="w-11 h-11 rounded-2xl bg-gradient-to-r from-orange-400 to-pink-400 flex items-center justify-center text-white font-bold">
+          K
+        </div>
+
+        <div>
+          <h2 className="font-bold text-xl">
+            Kiddo
+          </h2>
+        </div>
+      </div>
+
+      <button
+        onClick={() => setMenuOpen(false)}
+        className="text-3xl"
+      >
+        ✕
+      </button>
+
+    </div>
+
+    {/* Menu Items */}
+    <nav className="flex flex-col items-center justify-center h-[calc(100vh-80px)] gap-8">
+
+      <Link
+        href="/"
+        onClick={() => setMenuOpen(false)}
+        className="text-2xl font-semibold"
+      >
+        Home
+      </Link>
+
+      <Link
+        href="/stories"
+        onClick={() => setMenuOpen(false)}
+        className="text-2xl font-semibold"
+      >
+        Stories
+      </Link>
+
+      <Link
+        href="/printables"
+        onClick={() => setMenuOpen(false)}
+        className="text-2xl font-semibold"
+      >
+        Printables
+      </Link>
+
+      <Link
+        href="/about"
+        onClick={() => setMenuOpen(false)}
+        className="text-2xl font-semibold"
+      >
+        About
+      </Link>
+
+    </nav>
+  </div>
+)}
     </div>
     
   );

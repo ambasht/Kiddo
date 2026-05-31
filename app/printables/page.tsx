@@ -6,6 +6,8 @@ import Newsletter from "@/components/sections/Newsletter";
 import {printables} from "@/data/printables";
 import Link from "next/link";
 import Button from "@/components/ui/Button";
+import Paging from "@/components/layout/Paging";
+import PrintableCard from "@/components/ui/PrintableCard";
 
 
 export default function PrintablesPage() {
@@ -123,52 +125,19 @@ export default function PrintablesPage() {
         </div>
       </section>*/}
 
-      
 
-      {/* Printables Grid */}
-      <section className="px-5 py-10">
-        <div className="max-w-7xl mx-auto grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-          {filteredPrintables.map((item, i) => (
-            <div
-              key={i}
-              className="bg-white rounded-[32px] overflow-hidden shadow-lg border border-orange-100 hover:-translate-y-2 hover:shadow-2xl transition-all duration-300"
-            >
-              {/* Preview */}
-              <div className="aspect-[4/3] bg-slate-100 flex items-center justify-center text-slate-400 text-sm font-medium">
-                [WORKSHEET PREVIEW]
-              </div>
 
-              <div className="p-6">
-                {/* Meta */}
-                <div className="flex items-center justify-between mb-4">
-                  <span className="text-sm text-slate-500">
-                   {`Age `}{item.age}
-                  </span>
 
-                  <span className="bg-red-100 text-red-500 text-xs px-3 py-1 rounded-full font-semibold">
-                    PDF
-                  </span>
-                </div>
 
-                {/* Title */}
-                <h3 className="text-xl font-bold leading-snug">
-                  {item.title}
-                </h3>
-
-                {/* Description */}
-                <p className="mt-4 text-slate-600 leading-relaxed text-sm">
-                  {item.desc}
-                </p>
-
-                {/* Button */}
-                <Link href={`/downloads/${item.slug}`}>
-                  <Button>Download File</Button>
-                </Link>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
+      <Paging
+        items={filteredPrintables}
+        renderItem={(printable) => (
+          <PrintableCard
+            key={printable.slug}
+            printable={printable}
+          />
+        )}
+      />
 
       {/* Trending Downloads */}
       <section className="px-5 py-14">
