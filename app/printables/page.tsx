@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { searchPrintables } from "@/lib/searchPrintables";
 import Newsletter from "@/components/sections/Newsletter";
-import {printables} from "@/data/printables";
+import { printables } from "@/data/printables";
 import Link from "next/link";
 import Button from "@/components/ui/Button";
 import Paging from "@/components/layout/Paging";
@@ -11,11 +11,11 @@ import PrintableCard from "@/components/ui/PrintableCard";
 
 
 export default function PrintablesPage() {
-    const featuredPrintable = printables.find(
-  (item) => item.featured
-);
+  const featuredPrintable = printables.find(
+    (item) => item.featured
+  );
 
-// search input state
+  // search input state
   const [search, setSearch] = useState("");
 
   // age filter state
@@ -28,7 +28,7 @@ export default function PrintablesPage() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-yellow-50 via-white to-orange-50 text-slate-800 overflow-hidden">
-      
+
       {/* Featured Printable */}
       <section className="px-5 py-14">
         <div className="max-w-7xl mx-auto bg-white rounded-[40px] shadow-2xl border border-orange-100 overflow-hidden grid lg:grid-cols-2">
@@ -57,41 +57,40 @@ export default function PrintablesPage() {
           </div>
         </div>
       </section>
-     {/* Search Section */}
-    <section className="px-5 -mt-8 relative z-20">
-      <div className="max-w-3xl mx-auto bg-white rounded-[32px] shadow-2xl border border-orange-100 p-4 flex items-center gap-3">
-        <input
-          type="text"
-          placeholder="Search printables..."
-          value={search}
-          onChange={(e) =>
-            setSearch(e.target.value)
-          }
-          className="flex-1 outline-none px-4 py-4 bg-transparent text-slate-700"
-        />
-    
-        <button className="bg-gradient-to-r from-orange-400 to-pink-400 text-white px-7 py-4 rounded-2xl font-semibold shadow-md hover:scale-105 transition-transform">
-          Search
-        </button>
-      </div>
-    </section>
+      {/* Search Section */}
+      <section className="px-5 -mt-8 relative z-20">
+        <div className="max-w-3xl mx-auto bg-white rounded-[32px] shadow-2xl border border-orange-100 p-4 flex items-center gap-3">
+          <input
+            type="text"
+            placeholder="Search printables..."
+            value={search}
+            onChange={(e) =>
+              setSearch(e.target.value)
+            }
+            className="flex-1 outline-none px-4 py-4 bg-transparent text-slate-700"
+          />
+
+          <button className="bg-gradient-to-r from-orange-400 to-pink-400 text-white px-7 py-4 rounded-2xl font-semibold shadow-md hover:scale-105 transition-transform">
+            Search
+          </button>
+        </div>
+      </section>
 
 
-     {/* Age Filters */}
+      {/* Age Filters */}
       <section className="px-5 py-10">
         <div className="max-w-7xl mx-auto flex flex-wrap gap-4">
-          {["","3–4", "5–7", "8–10"].map(
+          {["", "3–4", "5–7", "8–10"].map(
             (age, i) => (
               <button
                 key={i}
                 onClick={() => setSelectedAge(age)}
-                className={`px-6 py-3 rounded-2xl font-medium transition-all shadow-sm ${
-                  age === selectedAge
+                className={`px-6 py-3 rounded-2xl font-medium transition-all shadow-sm ${age === selectedAge
                     ? "bg-gradient-to-r from-orange-400 to-pink-400 text-white"
                     : "bg-white border border-orange-100 text-slate-600 hover:border-orange-300"
-                }`}
+                  }`}
               >
-                {`Ages `}{age===""?"All":age}
+                {`Ages `}{age === "" ? "All" : age}
               </button>
             )
           )}
@@ -124,10 +123,6 @@ export default function PrintablesPage() {
           ))}
         </div>
       </section>*/}
-
-
-
-
 
       <Paging
         items={filteredPrintables}
@@ -178,9 +173,9 @@ export default function PrintablesPage() {
       </section>
 
       {/* Newsletter */}
-      <Newsletter/>
+      <Newsletter />
 
-      
+
     </div>
   );
 }
